@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lab5-66eb6": {
+      "hosting": {
+        "book-store": [
+          "lab5-66eb6"
+        ]
+      }
+    }
+  }
+}
