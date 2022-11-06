@@ -1,0 +1,105 @@
+<form class="ui large from segment" #signupForm="ngForm">
+  <h3 class="ui header">Sign up</h3>
+  <fieldset [disabled]="!edit ? 'disabled' : null">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="form-control" name="username" id="username" [(ngModel)]="user.username" required>
+      <p>Username is required</p>
+      <p id="required"></p>
+      <script>
+        function myFunction() {
+          var inpObj = document.getElementById("username");
+          if (!inpObj.checkValidity()) {
+            document.getElementById("required")
+              .innerHTML = inpObj.validationMessage;
+          } else {
+            document.getElementById("required")
+              .innerHTML = "Input is ALL RIGHT";
+          }
+        }
+      </script>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" name="password" id="password" [(ngModel)]="user.password" required>
+      <p>Password is required</p>
+      <p id="requiredpass"></p>
+      <script>
+        function myFunction() {
+          var inpObj = document.getElementById("password");
+          if (!inpObj.checkValidity()) {
+            document.getElementById("requiredpass")
+              .innerHTML = inpObj.validationMessage;
+          } else {
+            document.getElementById("requiredpass")
+              .innerHTML = "Input is ALL RIGHT";
+          }
+        }
+      </script>
+
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input class="form-control" type="text" name="phone" id="phone" pattern="\d{10}" [(ngModel)]="user.phone">
+      <p>Should be a number with 10 digits</p>
+      <p id="phonedd"></p>
+      <script>
+        function myFunction() {
+          var inpObj = document.getElementById("phone");
+          if (!inpObj.checkValidity()) {
+            document.getElementById("phonedd")
+              .innerHTML = inpObj.validationMessage;
+          } else {
+            document.getElementById("phonedd")
+              .innerHTML = "Input is ALL RIGHT";
+          }
+        }
+      </script>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="user.email">
+      <p>Should be an email format</p>
+      <p id="emailform"></p>
+      <script>
+        function myFunction() {
+          var inpObj = document.getElementById("email");
+          if (!inpObj.checkValidity()) {
+            document.getElementById("emailform")
+              .innerHTML = inpObj.validationMessage;
+          } else {
+            document.getElementById("emailform")
+              .innerHTML = "Input is ALL RIGHT";
+          }
+        }
+      </script>
+    </div>
+  </fieldset>
+  <div class="btn-toolbar" role="toolbar">
+    <button class="btn btn-success"
+            [disabled]="signupForm.invalid"
+            name="save" (click)="save()">Submit</button>
+  </div>
+</form>
+<div class="table" *ngIf="user">
+  <h2>User Info</h2>
+  <div class="row">
+    <div class="col-2">Username:</div>
+    <div class="col-xs-9">{{user.username}}</div>
+  </div>
+  <div class="row">
+    <div class="col-2">Password:</div>
+    <div class="col-xs-9">{{user.password}}</div>
+  </div>
+  <div class="row" *ngIf="user.phone">
+    <div class="col-2">Phone Number:</div>
+    <div class="col-xs-9">{{user.phone}}</div>
+  </div>
+  <div class="row" *ngIf="user.email">
+    <div class="col-2">Email:</div>
+    <div class="col-xs-9">{{user.email}}</div>
+  </div>
+</div>
+
+
