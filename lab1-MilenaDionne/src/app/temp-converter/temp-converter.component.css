@@ -1,0 +1,45 @@
+input{
+  border-style: double;
+  border-width: thin;
+  width: 200px;
+  height: 25px;
+  border-color: dodgerblue;
+  border-radius: 5px;
+  margin-left: -180px;
+
+}
+
+button{
+  background-color: lightgray;
+  width: 60px;
+  height: 40px;
+  font-size: 30px;
+  color: black;
+  border-color: dodgerblue;
+  border-width: thin;
+  border-radius: 7px;
+  margin: 20px;
+}
+
+label{
+  font-size: 22px;
+  font-style: normal;
+  text-align: left;
+  float: left;
+  padding: 20px;
+}
+
+table{
+  margin: auto;
+  padding: 20px;
+  border-color: dodgerblue;
+}
+
+.inputresult{
+  border-style: double;
+  border-width: thin;
+  width: 200px;
+  height: 25px;
+  border-color: dodgerblue;
+  margin-left: -380px;
+}

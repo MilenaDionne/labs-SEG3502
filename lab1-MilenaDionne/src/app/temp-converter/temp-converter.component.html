@@ -1,0 +1,34 @@
+<table frame="box">
+  <tr>
+    <td>
+      <label for="premiernombre">Premier nombre:</label>
+    </td>
+    <td>
+      <input name="premiernombre" id="premiernombre" value="{{valeur1 | number: '1.0-9'}}" #nombre1>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="deuxnombre">Deuxième nombre:</label>
+    </td>
+    <td>
+      <input name="deuxnombre" id="deuxnombre" value="{{valeur2 | number:'1.0-9'}}" #nombre2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label name="result">Résultat:</label>
+    </td>
+    <td>
+      <input class="inputresult" name="result" id="result" value="{{valeur3 | number: '1.0-9'}}" #nombre3>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="addition(nombre1.value, nombre2.value)">+</button>
+      <button (click)="soustraction(nombre1.value, nombre2.value)">-</button>
+      <button (click)="multiplication(nombre1.value, nombre2.value)">*</button>
+      <button (click)="division(nombre1.value, nombre2.value)">/</button>
+    </td>
+  </tr>
+</table>
