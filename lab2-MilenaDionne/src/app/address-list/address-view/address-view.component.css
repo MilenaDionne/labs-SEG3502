@@ -1,0 +1,25 @@
+.address-view-elt{
+  vertical-align: top;
+  padding: 20px;
+}
+
+.address-view-btns {
+  padding-top: 20px;
+}
+
+.address-view-elt {
+  padding: 20px;
+}
+
+#bloc1, #bloc2, #bloc3 {
+  display:inline;
+  padding: 10px;
+}
+
+#bloc3 {
+  width: 10px;
+}
+
+
+
+
